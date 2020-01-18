@@ -90,6 +90,8 @@ for (let game of warriorsGames) {
   const { awayTeam, homeTeam } = game;
   const gameLi = document.createElement("li");
   gameLi.innerText = `${awayTeam.team} @ ${homeTeam.team}`;
+  const scoreLine = `${awayTeam.points}-${homeTeam.points}`;
+  console.log(scoreLine);
   ulParent.append(gameLi);
 }
 
