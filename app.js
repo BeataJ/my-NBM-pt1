@@ -88,5 +88,7 @@ const warriorsGames = [
 const ulParent = document.createElement("ul");
 for (let game of warriorsGames) {
   const { awayTeam, homeTeam } = game;
-  console.log(awayTeam.team, homeTeam.team);
+  const gameLi = document.createElement("li");
+  gameLi.innerText = `${awayTeam.team} @ ${homeTeam.team}`;
+  ulParent.append(gameLi);
 }
