@@ -92,3 +92,5 @@ for (let game of warriorsGames) {
   gameLi.innerText = `${awayTeam.team} @ ${homeTeam.team}`;
   ulParent.append(gameLi);
 }
+
+document.body.prepend(ulParent);
