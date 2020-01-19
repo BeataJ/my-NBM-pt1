@@ -104,6 +104,8 @@ for (let game of warriorsGames) {
     scoreLine = `${aPoints}-<b>${hPoints}</b>`;
   }
 
+  const warriors = hTeam === "Golden State" ? homeTeam : awayTeam;
+
   gameLi.innerHTML = `${teamNames} ${scoreLine}`;
   ulParent.append(gameLi);
 }
