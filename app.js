@@ -96,8 +96,15 @@ for (let game of warriorsGames) {
   const { team: aTeam, points: aPoints } = awayTeam;
 
   const teamNames = `${aTeam} @ ${hTeam}`;
-  const scoreLine = `${aPoints}-${hPoints}`;
-  gameLi.innerText = `${teamNames} ${scoreLine}`;
+
+  let scoreLine;
+  if (aPoints > hPoints) {
+    scoreLine = `<b>${aPoints}</b>-${hPoints}`;
+  } else {
+    scoreLine = `${aPoints}-<b>${hPoints}</b>`;
+  }
+
+  gameLi.innerHTML = `${teamNames} ${scoreLine}`;
   ulParent.append(gameLi);
 }
 
