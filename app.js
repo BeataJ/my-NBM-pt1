@@ -111,6 +111,7 @@ const makeChart = games => {
     gameLi.innerHTML = `${teamNames} ${scoreLine}`;
     ulParent.append(gameLi);
   }
+  return ulParent;
 };
 
 document.body.prepend(ulParent);
