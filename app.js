@@ -88,8 +88,6 @@ const warriorsGames = [
 const makeChart = games => {
   const ulParent = document.createElement("ul");
   for (let game of games) {
-    const { awayTeam, homeTeam } = game;
-
     const gameLi = document.createElement("li");
     gameLi.innerHTML = getScoreLine(game);
 
@@ -102,7 +100,7 @@ const makeChart = games => {
   return ulParent;
 };
 
-const getScoreLine = () => {
+const getScoreLine = ({ homeTeam, awayTeam }) => {
   const { team: hTeam, points: hPoints } = homeTeam;
 
   const { team: aTeam, points: aPoints } = awayTeam;
