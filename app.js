@@ -91,10 +91,9 @@ const makeChart = games => {
     const gameLi = document.createElement("li");
     gameLi.innerHTML = getScoreLine(game);
 
-    const warriors = hTeam === "Golden State" ? homeTeam : awayTeam;
-    gameLi.classList.add(warriors.isWinner ? "win" : "loss");
+    // const warriors = hTeam === "Golden State" ? homeTeam : awayTeam;
+    // gameLi.classList.add(warriors.isWinner ? "win" : "loss");
 
-    gameLi.innerHTML = `${teamNames} ${scoreLine}`;
     ulParent.append(gameLi);
   }
   return ulParent;
@@ -113,6 +112,7 @@ const getScoreLine = ({ homeTeam, awayTeam }) => {
   } else {
     scoreLine = `${aPoints}-<b>${hPoints}</b>`;
   }
+  return `${teamNames} ${scoreLine}`;
 };
 
 const chart1 = makeChart(warriorsGames);
