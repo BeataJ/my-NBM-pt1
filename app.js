@@ -90,13 +90,17 @@ const makeChart = (games, targetTeam) => {
   for (let game of games) {
     const gameLi = document.createElement("li");
     gameLi.innerHTML = getScoreLine(game);
-    isWinner(game, targetTeam);
-    // const warriors = hTeam === "Golden State" ? homeTeam : awayTeam;
-    // gameLi.classList.add(warriors.isWinner ? "win" : "loss");
+
+    gameLi.classList.add(isWinner(game, targetTeam) ? "win" : "loss");
 
     ulParent.append(gameLi);
   }
   return ulParent;
+};
+
+const isWinner = ({ homeTeam, awayTeam }, targetTeam) => {
+  const target = homeTeam.team === targetTeam ? homeTeam : awayTeam;
+  return target.isWinner;
 };
 
 const getScoreLine = ({ homeTeam, awayTeam }) => {
