@@ -119,5 +119,5 @@ const getScoreLine = ({ homeTeam, awayTeam }) => {
   return `${teamNames} ${scoreLine}`;
 };
 
-const chart1 = makeChart(warriorsGames, "Golden State");
+const chart1 = makeChart(warriorsGames, "Houston");
 document.body.prepend(chart1);
