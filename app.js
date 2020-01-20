@@ -87,7 +87,7 @@ const warriorsGames = [
 
 const makeChart = games => {
   const ulParent = document.createElement("ul");
-  for (let game of warriorsGames) {
+  for (let game of games) {
     const { awayTeam, homeTeam } = game;
 
     const gameLi = document.createElement("li");
@@ -114,6 +114,8 @@ const makeChart = games => {
   return ulParent;
 };
 
-document.body.prepend(ulParent);
+const chart1 = makeChart(warriorsGames);
+document.body.prepend(chart1);
 
-makeChart(data);
+const chart2 = makeChart(warriorsGames);
+document.body.prepend(chart2);
