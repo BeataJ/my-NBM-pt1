@@ -85,12 +85,12 @@ const warriorsGames = [
   }
 ];
 
-const makeChart = games => {
+const makeChart = (games, targetTeam) => {
   const ulParent = document.createElement("ul");
   for (let game of games) {
     const gameLi = document.createElement("li");
     gameLi.innerHTML = getScoreLine(game);
-
+    isWinner(game, targetTeam);
     // const warriors = hTeam === "Golden State" ? homeTeam : awayTeam;
     // gameLi.classList.add(warriors.isWinner ? "win" : "loss");
 
@@ -115,5 +115,5 @@ const getScoreLine = ({ homeTeam, awayTeam }) => {
   return `${teamNames} ${scoreLine}`;
 };
 
-const chart1 = makeChart(warriorsGames);
+const chart1 = makeChart(warriorsGames, "Golden State");
 document.body.prepend(chart1);
